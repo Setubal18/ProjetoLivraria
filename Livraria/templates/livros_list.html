@@ -2,7 +2,7 @@
 {% load static %}
 {% load humanize %}
 {% block tituloPagina %}
-Listagem de Veículos
+Listagem de Livros
 {% endblock tituloPagina %}
 
 {% block content %}
@@ -46,13 +46,13 @@ Listagem de Veículos
 </div>
 <br>
 <div class="row">
-    {% for veiculo in lista %}
+    {% for livro in lista %}
     <div class="col-md-4">
         <div class="thumbnail">
-            <a href="{% url 'perfil_veiculo' pk=veiculo.pk %}">
-                <img src="{{veiculo.foto_capa.url}}" style="width:100%">
+            <a href="{% url 'perfil_livro' pk=livro.pk %}">
+                <img src="{{liro.foto_capa.url}}" style="width:100%">
                 <div class="caption">
-                    <p>{{veiculo.modelo}} - {{veiculo.ano}} - R${{veiculo.preco|intcomma}}</p>
+                    <p>{{livro.titulo}} - {{veiculo.autor}} - R${{veiculo.valor|intcomma}}</p>
                 </div>
             </a>
         </div>
