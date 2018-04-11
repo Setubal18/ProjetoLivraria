@@ -29,7 +29,7 @@ class Livro(models.Model):
     numero_paginas = models.IntegerField()
     anoPublicacao = models.DateField(unique_for_year='year')
     foto_capa = models.ImageField(upload_to='imagens')
-
+    valor = models.FloatField('Preço')
     editora = models.ForeignKey(Editora, on_delete=models.CASCADE, blank=False)
     autores = models.ManyToManyField(Autor)
 
