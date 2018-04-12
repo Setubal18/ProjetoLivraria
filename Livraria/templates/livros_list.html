@@ -52,7 +52,7 @@ Listagem de Livros
             <a href="{% url 'perfil_livro' pk=livro.pk %}">
                 <img src="{{livro.foto_capa.url}}" style="width:100%">
                 <div class="caption">
-                    <p>{{livro.titulo}} - {{livro.nome}} - R${{livro.valor|intcomma}}</p>
+                    <p>{{livro.titulo}} - {{livro.autor.nome}} - R${{livro.valor|intcomma}}</p>
                 </div>
             </a>
         </div>
