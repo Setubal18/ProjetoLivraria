@@ -9,7 +9,7 @@ from django.shortcuts import render, get_object_or_404
 #     livros = {'lista':livro}
 #     return render(request,'livros_list.html',livros)
 
-def listar_veiculo(request):
+def listar_livro(request):
      query = request.GET.get("busca", '')
      page = request.GET.get('page', '')
      ordenar = request.GET.get("ordenar", '')
@@ -29,4 +29,9 @@ def listar_veiculo(request):
              livro = paginator.page(paginator.num_pages)
      livros = {'lista': livro}
      return render(request, 'livros_list.html', livros)
+
+
+def perfil_livro(request, pk):
+    livro = get_object_or_404(Livro, pk=pk)
+    return render(request, "perfil_livro.html", {'livro': livro})
 

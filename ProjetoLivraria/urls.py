@@ -20,6 +20,7 @@ from django.conf import settings
 from Livraria.views import *
 
 urlpatterns = [
-    path(''),
+    path('livros/listar',listar_livro,name='listar_livro'),
+    path('livros/perfil/(<int:pk>)', perfil_livro, name='perfil_livro'),
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
